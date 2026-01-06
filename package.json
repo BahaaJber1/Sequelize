@@ -1,0 +1,21 @@
+{
+  "name": "sequelize",
+  "type": "commonjs",
+  "packageManager": "yarn@4.12.0",
+  "devDependencies": {
+    "pg": "^8.13.3",
+    "sequelize": "^6.37.5",
+    "sequelize-cli": "^6.6.2"
+  },
+  "scripts": {
+    "dev:db:create": "yarn sequelize-cli db:create",
+    "dev:db:drop": "yarn sequelize-cli db:drop",
+    "dev:db:migration:create": "yarn sequelize-cli migration:generate --name",
+    "dev:db:migrations:run": "yarn sequelize-cli db:migrate",
+    "dev:db:migrations:drop": "yarn sequelize-cli db:migrate:undo"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "uuid": "^11.0.5"
+  }
+}
