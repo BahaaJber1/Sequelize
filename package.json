@@ -8,11 +8,19 @@
     "sequelize-cli": "^6.6.2"
   },
   "scripts": {
+    "dev:genUUID": "node ./utils/libs/generate_uuid.js --size",
     "dev:db:create": "yarn sequelize-cli db:create",
     "dev:db:drop": "yarn sequelize-cli db:drop",
     "dev:db:migration:create": "yarn sequelize-cli migration:generate --name",
     "dev:db:migrations:run": "yarn sequelize-cli db:migrate",
-    "dev:db:migrations:drop": "yarn sequelize-cli db:migrate:undo"
+    "dev:db:migrations:drop": "yarn sequelize-cli db:migrate:undo",
+    "dev:seed:create": "yarn sequelize-cli seed:generate --name",
+    "dev:seed:undo": "yarn sequelize-cli db:seed:undo",
+    "dev:seeds:undo:to": "yarn sequelize-cli db:seed:undo:all --to",
+    "dev:seeds:undo:all": "yarn sequelize-cli db:seed:undo:all",
+    "dev:seeds:run:to": "yarn sequelize-cli db:seed --seed",
+    "dev:seeds:run": "yarn sequelize-cli db:seed:all",
+    "kill": "npx kill-port"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
